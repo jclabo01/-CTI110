@@ -1,0 +1,32 @@
+# Jeffrey Clabo
+ # 3/9/2026
+ # P2LAB2
+ # Travel Budget
+
+# Travel Expense Calculator
+
+# Introduction
+print("This program calculates and displays travel expenses")
+
+# Input: Budget and Destination
+budget = float(input("Enter Budget: "))
+destination = input("Enter your travel destination: ")
+
+# Input: Expenses
+gas_expense = float(input("How much do you think you will spend on gas? "))
+accommodation_expense = float(input("Approximately, how much will you need for accommodation/hotel? "))
+food_expense = float(input("Last, how much do you need for food? "))
+
+# Calculate total expense and remaining balance
+total_expense = gas_expense + accommodation_expense + food_expense
+remaining_balance = budget - total_expense
+
+# Displaying the results with formatted output
+print("\\n----------- Travel Expenses -----------")
+print(f"{'Location:':<25} {destination}")
+print(f"{'Initial Budget:':<25} ${budget:.2f}")
+print(f"{'Fuel:':<25} ${gas_expense:.2f}")
+print(f"{'Accommodation:':<25} ${accommodation_expense:.2f}")
+print(f"{'Food:':<25} ${food_expense:.2f}")
+print(f"{'Remaining Balance:':<25} ${remaining_balance:.2f}")
+print("--------------------------------------")
