@@ -35,7 +35,7 @@ def main():
     gross_pay = regular_pay + overtime_pay
 
     # Display results
-    print("\\n---------------------------------------------")
+    
     print(f"Employee name: {employee_name}")
     print("Hours Worked    Pay Rate     OverTime      OverTime Pay   RegHour Pay   Gross Pay")
     print("-----------------------------------------------------------------------------")
