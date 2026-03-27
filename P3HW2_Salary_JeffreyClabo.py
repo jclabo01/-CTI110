@@ -7,24 +7,33 @@
 
 
 
-def calculate_pay(hours_worked, pay_rate):
-    overtime_hours = max(0, hours_worked - 40)
-    regular_hours = hours_worked - overtime_hours
-    overtime_pay = overtime_hours * (pay_rate * 1.5)
-    regular_pay = regular_hours * pay_rate
-    gross_pay = regular_pay + overtime_pay
-
-    return overtime_hours, overtime_pay, regular_pay, gross_pay
-
 def main():
     # Input employee details
     employee_name = input("Enter employee's name: ")
     hours_worked = float(input("Enter number of hours worked: "))
     pay_rate = float(input("Enter employee's pay rate: "))
     
-    # Calculate pay
-    overtime_hours, overtime_pay, regular_pay, gross_pay = calculate_pay(hours_worked, pay_rate)
+    # Initialize variables
+    overtime_hours = 0
+    overtime_pay = 0
+    regular_pay = 0
+    gross_pay = 0
     
+    # Calculate overtime
+    if hours_worked > 40:
+        overtime_hours = hours_worked - 40
+        regular_hours = 40
+    else:
+        regular_hours = hours_worked
+        
+    # Calculate regular and overtime pay
+    regular_pay = regular_hours * pay_rate
+    if overtime_hours > 0:
+        overtime_pay = overtime_hours * (pay_rate * 1.5)
+    
+    # Calculate gross pay
+    gross_pay = regular_pay + overtime_pay
+
     # Display results
     print("\\n---------------------------------------------")
     print(f"Employee name: {employee_name}")
